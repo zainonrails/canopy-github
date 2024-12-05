@@ -3,7 +3,7 @@ The repository contains a basic Github client for its REST API.
 ## Requirements
 * Ruby 3.1
 * Access to at least one Github repository
-* Please create a personal access token on the above repository for use in the code
+* Please create a personal access token for your personal account so that the Github API requests work. The repository is public, so any token will work.
 
 ## Instructions
 It needs to be run at the command line like this
