@@ -23,8 +23,10 @@ module Github
       # and the date the issue was closed if it is closed, or the date the issue was created if it is open.
       # the issues are sorted by the date they were closed or created, from newest to oldest.
       
-      response = @client.get("/issues?state=#{state}")
-      issues = JSON.parse(response.body)
+      issues = @client.get_all_paginated('/issues', { state: state })
+      issues_count = issues.size
+      puts "Total issues found: #{issues_count}"
+
       sorted_issues = issues.sort_by do |issue|
         if state == 'closed'
           issue['closed_at']
